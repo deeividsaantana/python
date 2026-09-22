@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 220 20% 4%;
+  --foreground: 220 20% 97%;
+  --muted: 220 10% 63%;
+  --border: 220 15% 16%;
+  --accent: 262 83% 66%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
