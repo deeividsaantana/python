@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Spell UI — Componentes animados para produtos modernos</title>
+<meta name="description" content="Biblioteca de componentes de UI animados, prontos para produção, para times que constroem produtos rápido." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="#" class="nav__brand">
+      <span class="nav__dot"></span>
+      Spell<span class="nav__brand-light">UI</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#features">Recursos</a>
+      <a href="#demo">Demonstração</a>
+      <a href="#pricing">Preços</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav__actions">
+      <a href="#" class="btn btn--ghost">Entrar</a>
+      <a href="#pricing" class="btn btn--primary">Começar grátis</a>
+    </div>
+    <button class="nav__burger" id="burger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav__mobile" id="mobileNav">
+    <a href="#features">Recursos</a>
+    <a href="#demo">Demonstração</a>
+    <a href="#pricing">Preços</a>
+    <a href="#faq">FAQ</a>
+    <a href="#pricing" class="btn btn--primary">Começar grátis</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero" id="hero">
+    <canvas id="gradientCanvas" class="hero__canvas"></canvas>
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <span class="badge">✨ Agora com 6 presets de gradiente animado</span>
+      <h1 class="hero__title">
+        Interfaces que <span class="grad-text">respiram</span><br />
+        movimento e cor.
+      </h1>
+      <p class="hero__subtitle">
+        Spell UI é um conjunto de componentes React copy-and-paste, com animações
+        fluidas e performáticas, para você construir landing pages e produtos
+        que realmente chamam atenção — sem reinventar a roda.
+      </p>
+      <div class="hero__cta">
+        <a href="#pricing" class="btn btn--primary btn--lg">Começar agora — é grátis</a>
+        <a href="#demo" class="btn btn--outline btn--lg">Ver demonstração ↓</a>
+      </div>
+      <div class="hero__stats">
+        <div><strong>12k+</strong><span>Desenvolvedores</span></div>
+        <div><strong>48</strong><span>Componentes</span></div>
+        <div><strong>4.9/5</strong><span>Avaliação média</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="logos">
+    <div class="container">
+      <p class="logos__label">Usado por times em empresas de todos os tamanhos</p>
+      <div class="logos__row">
+        <span>Nimbus</span><span>Vortex Labs</span><span>Plasma Co</span><span>Prism</span><span>Lumen</span><span>Pulse Inc.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Recursos</span>
+        <h2>Tudo que você precisa para criar interfaces marcantes</h2>
+        <p>Componentes leves, acessíveis e fáceis de customizar, construídos para acelerar o seu fluxo de trabalho.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card__icon">🎨</div>
+          <h3>Gradientes animados</h3>
+          <p>Seis presets prontos — Lava, Prism, Plasma, Pulse, Vortex e Mist — totalmente customizáveis via config.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">⚡</div>
+          <h3>Performance nativa</h3>
+          <p>Renderização otimizada em canvas/GPU, com fallback automático para reduzir consumo em dispositivos móveis.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🧩</div>
+          <h3>Copy & paste</h3>
+          <p>Sem dependências pesadas. Copie o componente, cole no seu projeto e customize como quiser.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🌗</div>
+          <h3>Dark mode nativo</h3>
+          <p>Todos os componentes já vêm prontos para temas claro e escuro, sem trabalho extra.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">♿</div>
+          <h3>Acessibilidade em primeiro lugar</h3>
+          <p>Contraste, foco e navegação por teclado testados em todos os componentes da biblioteca.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🛠️</div>
+          <h3>Totalmente tipado</h3>
+          <p>API em TypeScript, com autocompletar e validações que evitam erros antes mesmo do build.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="demo">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Demonstração</span>
+        <h2>Experimente os presets de gradiente</h2>
+        <p>Clique em um preset abaixo para ver o componente <code>AnimatedGradient</code> em ação, ao vivo.</p>
+      </div>
+      <div class="demo-frame">
+        <canvas id="demoCanvas" class="demo-frame__canvas"></canvas>
+        <div class="demo-frame__ui">
+          <div class="demo-frame__presets" id="presetButtons"></div>
+          <div class="demo-frame__label">
+            <p id="presetName">Lava</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Depoimentos</span>
+        <h2>Times de todo o mundo confiam no Spell UI</h2>
+      </div>
+      <div class="grid grid--3">
+        <div class="quote">
+          <p>"Trocamos nosso hero estático pelo AnimatedGradient e o tempo de permanência na landing page aumentou 34%."</p>
+          <div class="quote__author"><strong>Marina Silva</strong><span>Head de Produto, Nimbus</span></div>
+        </div>
+        <div class="quote">
+          <p>"A melhor parte é não precisar de nenhuma dependência extra. Copiei, colei e já estava funcionando."</p>
+          <div class="quote__author"><strong>Rafael Costa</strong><span>Engenheiro Frontend, Plasma Co</span></div>
+        </div>
+        <div class="quote">
+          <p>"Componentes lindos, leves e com ótima acessibilidade. Virou padrão em todos os nossos projetos."</p>
+          <div class="quote__author"><strong>Bianca Alves</strong><span>Design Lead, Vortex Labs</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="pricing">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Preços</span>
+        <h2>Um plano para cada estágio do seu projeto</h2>
+        <p>Comece de graça. Faça upgrade quando seu produto crescer.</p>
+      </div>
+      <div class="grid grid--3 pricing">
+        <div class="price-card">
+          <h3>Free</h3>
+          <p class="price">R$0<span>/mês</span></p>
+          <p class="price-card__desc">Perfeito para projetos pessoais e testes.</p>
+          <ul>
+            <li>✔ Acesso a todos os componentes</li>
+            <li>✔ Uso em projetos ilimitados</li>
+            <li>✔ Atualizações da comunidade</li>
+          </ul>
+          <a href="#" class="btn btn--outline btn--full">Começar grátis</a>
+        </div>
+        <div class="price-card price-card--featured">
+          <span class="price-card__tag">Mais popular</span>
+          <h3>Pro</h3>
+          <p class="price">R$49<span>/mês</span></p>
+          <p class="price-card__desc">Para times que precisam de suporte prioritário.</p>
+          <ul>
+            <li>✔ Tudo do plano Free</li>
+            <li>✔ Suporte prioritário</li>
+            <li>✔ Presets e temas exclusivos</li>
+            <li>✔ Acesso antecipado a novidades</li>
+          </ul>
+          <a href="#" class="btn btn--primary btn--full">Assinar Pro</a>
+        </div>
+        <div class="price-card">
+          <h3>Enterprise</h3>
+          <p class="price">Sob consulta</p>
+          <p class="price-card__desc">Para empresas com necessidades específicas.</p>
+          <ul>
+            <li>✔ Tudo do plano Pro</li>
+            <li>✔ SLA dedicado</li>
+            <li>✔ Onboarding assistido</li>
+            <li>✔ Faturamento customizado</li>
+          </ul>
+          <a href="#" class="btn btn--outline btn--full">Falar com vendas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Perguntas frequentes</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Preciso instalar alguma dependência para usar o Spell UI?</summary>
+          <p>Não. Os componentes são feitos para copiar e colar diretamente no seu projeto React/Next.js, sem dependências externas obrigatórias.</p>
+        </details>
+        <details>
+          <summary>O AnimatedGradient funciona bem em dispositivos móveis?</summary>
+          <p>Sim, a renderização é otimizada e reduz automaticamente a complexidade da animação em telas menores e dispositivos com menos recursos.</p>
+        </details>
+        <details>
+          <summary>Posso customizar as cores dos presets?</summary>
+          <p>Sim, cada preset aceita uma configuração customizada de cores, velocidade e intensidade através da prop <code>config</code>.</p>
+        </details>
+        <details>
+          <summary>Existe suporte a dark mode?</summary>
+          <p>Todos os componentes já possuem suporte nativo a temas claro e escuro, sem necessidade de configuração adicional.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta__inner">
+      <h2>Pronto para dar vida à sua interface?</h2>
+      <p>Junte-se a milhares de desenvolvedores construindo produtos mais bonitos com Spell UI.</p>
+      <a href="#pricing" class="btn btn--primary btn--lg">Começar gratuitamente</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a href="#" class="nav__brand">
+        <span class="nav__dot"></span>
+        Spell<span class="nav__brand-light">UI</span>
+      </a>
+      <p>Componentes animados para produtos que se destacam.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Produto</h4>
+      <a href="#features">Recursos</a>
+      <a href="#demo">Demonstração</a>
+      <a href="#pricing">Preços</a>
+    </div>
+    <div class="footer__col">
+      <h4>Empresa</h4>
+      <a href="#">Sobre</a>
+      <a href="#">Blog</a>
+      <a href="#">Carreiras</a>
+    </div>
+    <div class="footer__col">
+      <h4>Legal</h4>
+      <a href="#">Privacidade</a>
+      <a href="#">Termos</a>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>© 2026 Spell UI. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
