@@ -1,8 +1,8 @@
 import { DemoPresets } from "@/components/demo-presets";
 
 const features = [
-  { icon: "🎨", title: "Gradiente animado Prism", desc: "Preset Prism pronto para uso, com cores e velocidade totalmente customizáveis via config." },
-  { icon: "⚡", title: "Performance nativa", desc: "Renderização otimizada em canvas, com fallback automático para reduzir consumo em dispositivos móveis." },
+  { icon: "🎨", title: "Gradiente animado Prism", desc: "Preset Prism pronto para uso, com cores, velocidade e distorção totalmente customizáveis via config." },
+  { icon: "⚡", title: "Performance nativa", desc: "Renderização em WebGL com shaders otimizados, leve mesmo em dispositivos móveis." },
   { icon: "🧩", title: "Copy & paste", desc: "Sem dependências pesadas. Copie o componente, cole no seu projeto e customize como quiser." },
   { icon: "🌗", title: "Dark mode nativo", desc: "Todos os componentes já vêm prontos para temas claro e escuro, sem trabalho extra." },
   { icon: "♿", title: "Acessibilidade em primeiro lugar", desc: "Contraste, foco e navegação por teclado testados em todos os componentes da biblioteca." },
@@ -48,7 +48,7 @@ const plans = [
 const faqs = [
   { q: "Preciso instalar alguma dependência para usar o Spell UI?", a: "Não. Os componentes são feitos para copiar e colar diretamente no seu projeto React/Next.js, sem dependências externas obrigatórias." },
   { q: "O AnimatedGradient funciona bem em dispositivos móveis?", a: "Sim, a renderização é otimizada e reduz automaticamente a complexidade da animação em telas menores e dispositivos com menos recursos." },
-  { q: "Posso customizar as cores dos presets?", a: "Sim, cada preset aceita uma configuração customizada de cores, velocidade e intensidade através da prop config." },
+  { q: "Posso customizar as cores do preset Prism?", a: "Sim, o preset aceita uma configuração customizada de cores, velocidade e intensidade através da prop config, ou você pode partir de um config \"custom\" totalmente seu." },
   { q: "Existe suporte a dark mode?", a: "Todos os componentes já possuem suporte nativo a temas claro e escuro, sem necessidade de configuração adicional." },
 ];
 
