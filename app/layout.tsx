@@ -1,73 +1,50 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { Providers } from "./providers";
+import type { Metadata, Viewport } from "next";
+import { links, profile } from "@/content/profile";
 
-const siteUrl = "https://spell-ui.example.com";
+const title = "Deivid Santana | Suporte de TI e Desenvolvimento";
+const description =
+  "Auxiliar Técnico N1/N2 na Renea Infraestrutura e graduando em Análise e Desenvolvimento de Sistemas em Suzano, SP. Desenvolvedor do Sistema RENEA, usado na operação do Complexo Alto do Tietê.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: "Spell UI — Componentes animados para produtos modernos",
-    template: "%s | Spell UI",
-  },
-  description:
-    "Biblioteca de componentes de UI animados, prontos para produção, para times que constroem produtos rápido.",
-  keywords: [
-    "spell ui",
-    "componentes react",
-    "gradiente animado",
-    "ui library",
-    "next.js",
-    "tailwind",
-  ],
-  authors: [{ name: "Spell UI" }],
+  title,
+  description,
   openGraph: {
-    type: "website",
+    type: "profile",
     locale: "pt_BR",
-    url: siteUrl,
-    siteName: "Spell UI",
-    title: "Spell UI — Componentes animados para produtos modernos",
-    description:
-      "Biblioteca de componentes de UI animados, prontos para produção, para times que constroem produtos rápido.",
+    title,
+    description,
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Spell UI — Componentes animados para produtos modernos",
-    description:
-      "Biblioteca de componentes de UI animados, prontos para produção, para times que constroem produtos rápido.",
-  },
-  robots: {
-    index: true,
-    follow: true,
+    card: "summary",
+    title,
+    description,
   },
 };
 
-const jsonLd = {
+export const viewport: Viewport = {
+  themeColor: "#0B1017",
+  viewportFit: "cover",
+};
+
+const personJsonLd = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Spell UI",
-  applicationCategory: "DeveloperApplication",
-  operatingSystem: "Web",
-  description:
-    "Biblioteca de componentes de UI animados, prontos para produção, para times que constroem produtos rápido.",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "BRL",
-  },
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: profile.currentPosition,
+  worksFor: { "@type": "Organization", name: "Renea Infraestrutura S.A." },
+  homeLocation: { "@type": "Place", name: profile.location },
+  sameAs: [links.linkedin, links.github],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className="dark" suppressHydrationWarning>
-      <head>
+    <html lang="pt-BR" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
-      </head>
-      <body className="font-sans antialiased" suppressHydrationWarning>
-        <Providers>{children}</Providers>
+        {children}
       </body>
     </html>
   );
