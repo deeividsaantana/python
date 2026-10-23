@@ -166,6 +166,17 @@ export const experience = [
     ],
   },
   {
+    company: "Rede Lojas Imagem",
+    role: "Auxiliar Técnico de Informática",
+    period: "dez 2025 — mai 2026",
+    current: false,
+    location: undefined as string | undefined,
+    activities: [
+      "Diagnóstico, reparo e manutenção de computadores e notebooks.",
+      "Montagem de equipamentos e suporte ao time interno.",
+    ],
+  },
+  {
     company: "Innovapack Embalagens",
     role: "Aprendiz de TI",
     period: "jun 2024 — out 2025",
